@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/fragmentMessages">
+
+    <fragment
+        android:id="@+id/fragmentMessages"
+        android:name="com.emirpetek.chatpal.chatpal.MessageFragment"
+        android:label="fragmentProfile"
+        tools:layout="@layout/fragment_message" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.emirpetek.chatpal.chatpal.ProfileFragment"
+        android:label="fragmentProfile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentInterests"
+            app:destination="@id/fragmentInterests" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_FragmentPostComment"
+            app:destination="@id/postCommentFragment" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_profileSettingsFragment"
+            app:destination="@id/profileSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDiscover"
+        android:name="com.emirpetek.chatpal.chatpal.DiscoverFragment"
+        android:label="fragmentDiscover"
+        tools:layout="@layout/fragment_discover" />
+    <fragment
+        android:id="@+id/fragmentFriends"
+        android:name="com.emirpetek.chatpal.chatpal.FriendsFragment"
+        android:label="fragmentFriends"
+        tools:layout="@layout/fragment_friends" />
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.emirpetek.chatpal.chatpal.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentPostComment"
+            app:destination="@id/postCommentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInterests"
+        android:name="com.emirpetek.chatpal.chatpal.InterestsFragment"
+        android:label="fragment_interests"
+        tools:layout="@layout/fragment_interests" />
+    <fragment
+        android:id="@+id/postCommentFragment"
+        android:name="com.emirpetek.chatpal.chatpal.PostCommentFragment"
+        android:label="fragment_post_comment"
+        tools:layout="@layout/fragment_post_comment" />
+    <fragment
+        android:id="@+id/profileSettingsFragment"
+        android:name="com.emirpetek.chatpal.chatpal.ProfileSettingsFragment"
+        android:label="fragment_profile_settings"
+        tools:layout="@layout/fragment_profile_settings" />
+</navigation>

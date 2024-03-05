@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "677849203021",
+    "project_id": "chatpal-670ae",
+    "storage_bucket": "chatpal-670ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677849203021:android:e9b9d727b2a059de9ab704",
+        "android_client_info": {
+          "package_name": "com.emirpetek.chatpal.chatpal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgnKlcW-zRPU4LAWyA9yKAydu_YUojGI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

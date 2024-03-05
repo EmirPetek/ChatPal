@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="logo_background_blue">#0080ff</color>
+    <color name="button_login_color">#dd7973</color>
+    <color name="friendlist_cardview">#14BDE3</color>
+    <color name="friendlist_cardview_button">#14E3C6</color>
+    <color name="girl_color">#FF00CB</color>
+</resources>
