@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emirpetek.chatpal.chatpal.databinding.ActivityMessagesScreenBinding
@@ -71,6 +72,8 @@ class MessagesScreenActivity : AppCompatActivity() {
         binding.recyclerViewMessagesScreen.layoutManager = LinearLayoutManager(this)
         adapter = MessagesScreenAdapter(this@MessagesScreenActivity,messagesList)
         binding.recyclerViewMessagesScreen.adapter = adapter
+
+        binding.progressBarMessagesScreenAct.visibility = View.VISIBLE // ilk girişte progressbar çalışır
 
     }
 
@@ -176,6 +179,9 @@ class MessagesScreenActivity : AppCompatActivity() {
                         }
                     }
                 }
+
+                binding.progressBarMessagesScreenAct.visibility = View.INVISIBLE // mesajlar gelince progressbar kaybolur
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -209,20 +215,15 @@ class MessagesScreenActivity : AppCompatActivity() {
                     messageReceiver = returnNumber
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
     }
-
     private fun checkerIsChattedBefore(user1Key:String,user2Key:String,user1Username:String,user2Username:String){
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference("chats")
         var newChat = ChatData()
-
-
         ref.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 var isChattedBefore = false // Daha önce sohbet edilmiş mi kontrolü

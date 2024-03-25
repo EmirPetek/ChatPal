@@ -47,6 +47,10 @@ class HomeFragment : Fragment() {
             requireActivity().findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomView.visibility = View.VISIBLE
 
+
+        binding.progressBarFragmentHome.visibility = View.VISIBLE // veriler gelene kadar progressbar çalışır
+
+
         return view
     }
 
@@ -69,6 +73,8 @@ class HomeFragment : Fragment() {
                     }
                 }
                 postList.sortByDescending { it.values.firstOrNull()?.shareDate }
+                binding.progressBarFragmentHome.visibility = View.INVISIBLE // veriler geldikten sonra progressbar durur
+
             }
 
             override fun onCancelled(error: DatabaseError) {

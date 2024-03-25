@@ -64,7 +64,7 @@ class UserScreenActivity : AppCompatActivity() {
         val userkeyAnother = receivedIntent.getStringExtra("key")
 
         userInformations()
-        btnState(userkeyMain!!,userkeyAnother!!)
+        btnState(userkeyMain,userkeyAnother!!)
         rvInterests(userkeyAnother)
         bindFollowingAndFollower(userkeyAnother)
         rvPosts(userkeyAnother)
@@ -411,7 +411,7 @@ class UserScreenActivity : AppCompatActivity() {
                         }
 
                         Log.e("user birthdate", user.birthdate!!)
-                        bindAge(user.birthdate!!,user.gender!!)
+                        bindAge(user.birthdate,user.gender!!)
                     }
                 }
             }

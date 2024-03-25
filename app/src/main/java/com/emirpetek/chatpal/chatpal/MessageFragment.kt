@@ -42,6 +42,9 @@ class MessageFragment : Fragment() {
             getChats(userKeyMain)
        }
 
+        binding.progressBarMessageFragment.visibility = View.VISIBLE // ilk girişte progressbar çalışır
+
+
         binding.recyclerViewChats.setHasFixedSize(true)
         binding.recyclerViewChats.layoutManager = LinearLayoutManager(requireContext())
         adapter = MessageFragmentAdapter(requireContext(),chatsList,userStatusList)
@@ -71,7 +74,7 @@ class MessageFragment : Fragment() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (userSnapshot in snapshot.children) {
                         val activityStatusSnapshot = userSnapshot.getValue(String::class.java)//.child("activityStatus").getValue(String::class.java)
-                            userStatusList.add(activityStatusSnapshot.toString())
+                        userStatusList.add(activityStatusSnapshot.toString())
                     }
                 }
 
@@ -86,6 +89,8 @@ class MessageFragment : Fragment() {
 
 
     private fun getChats(userKey:String){
+
+
 
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference("chats")
@@ -152,6 +157,9 @@ class MessageFragment : Fragment() {
                         }
                     }
                 }
+
+                binding.progressBarMessageFragment.visibility = View.INVISIBLE // veriler gelince progressbar kaybolur
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -160,6 +168,9 @@ class MessageFragment : Fragment() {
 
         })
         numUnreadMessageBadge = 0
+
+
+
     }
 
     fun updateUnreadMessageCount(messageCount: Int) {

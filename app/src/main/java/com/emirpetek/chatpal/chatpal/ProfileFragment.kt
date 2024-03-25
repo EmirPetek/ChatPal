@@ -80,7 +80,7 @@ class ProfileFragment : Fragment() {
         bottomView.visibility = View.VISIBLE
 
 
-
+        binding.progressBarProfileFragment.visibility = View.VISIBLE // progressbar görünür olur
 
         return view
     }
