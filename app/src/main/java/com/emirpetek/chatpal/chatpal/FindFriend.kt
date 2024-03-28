@@ -1,7 +1,8 @@
 package com.emirpetek.chatpal.chatpal
 
 import android.util.Log
-import android.widget.Toast
+import com.emirpetek.chatpal.chatpal.data.Users
+import com.emirpetek.chatpal.chatpal.fragment.FriendsFragment
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

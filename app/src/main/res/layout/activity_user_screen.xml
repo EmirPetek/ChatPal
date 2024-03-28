@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#F8F7F4"
     android:backgroundTint="#F8F7F4"
-    tools:context=".UserScreenActivity">
+    tools:context=".activity.UserScreenActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarFriends"

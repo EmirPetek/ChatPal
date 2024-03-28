@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/fragmentMessages"
-        android:name="com.emirpetek.chatpal.chatpal.MessageFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.MessageFragment"
         android:label="fragmentProfile"
         tools:layout="@layout/fragment_message" />
     <fragment
         android:id="@+id/fragmentProfile"
-        android:name="com.emirpetek.chatpal.chatpal.ProfileFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.ProfileFragment"
         android:label="fragmentProfile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -27,17 +27,17 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentDiscover"
-        android:name="com.emirpetek.chatpal.chatpal.DiscoverFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.DiscoverFragment"
         android:label="fragmentDiscover"
         tools:layout="@layout/fragment_discover" />
     <fragment
         android:id="@+id/fragmentFriends"
-        android:name="com.emirpetek.chatpal.chatpal.FriendsFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.FriendsFragment"
         android:label="fragmentFriends"
         tools:layout="@layout/fragment_friends" />
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.emirpetek.chatpal.chatpal.HomeFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -46,17 +46,17 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentInterests"
-        android:name="com.emirpetek.chatpal.chatpal.InterestsFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.InterestsFragment"
         android:label="fragment_interests"
         tools:layout="@layout/fragment_interests" />
     <fragment
         android:id="@+id/postCommentFragment"
-        android:name="com.emirpetek.chatpal.chatpal.PostCommentFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.PostCommentFragment"
         android:label="fragment_post_comment"
         tools:layout="@layout/fragment_post_comment" />
     <fragment
         android:id="@+id/profileSettingsFragment"
-        android:name="com.emirpetek.chatpal.chatpal.ProfileSettingsFragment"
+        android:name="com.emirpetek.chatpal.chatpal.fragment.ProfileSettingsFragment"
         android:label="fragment_profile_settings"
         tools:layout="@layout/fragment_profile_settings" />
 </navigation>

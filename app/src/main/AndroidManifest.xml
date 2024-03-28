@@ -14,22 +14,22 @@
         tools:targetApi="31"
         android:windowSoftInputMode="stateVisible|adjustResize">
         <activity
-            android:name=".MessagesScreenActivity"
+            android:name=".activity.MessagesScreenActivity"
             android:exported="false" />
         <activity
             android:name=".MyRequestListActivity"
             android:exported="false" />
         <activity
-            android:name=".UserScreenActivity"
+            android:name=".activity.UserScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpScreen"
+            android:name=".activity.SignUpScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginScreen"
+            android:name=".activity.LoginScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
