@@ -46,6 +46,8 @@ class DiscoverFragment : Fragment() {
         adapter = DiscoverFragmentAdapter(requireContext(),userList)
         binding.recyclerViewDiscoverUsers.adapter = adapter
 
+        binding.progressBarFragmentDiscover.visibility = View.VISIBLE // ilk girişte pb oluşturur
+
 
         binding.recyclerViewDiscoverUsers.addItemDecoration(object : RecyclerView.ItemDecoration() {
                     override fun getItemOffsets(
@@ -91,6 +93,8 @@ class DiscoverFragment : Fragment() {
                 }
                 userList.shuffle()
                 adapter.notifyDataSetChanged()
+                binding.progressBarFragmentDiscover.visibility = View.GONE // veriler geldikten sonra pb kaybolur
+
             }
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")

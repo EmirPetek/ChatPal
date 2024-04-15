@@ -55,6 +55,7 @@ class ProfileFragment : Fragment() {
     private var numberOfFriends = 0
     private var mContext: Context? = null
     private var userKey = ""
+    private var progressBarCounting = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -86,7 +87,15 @@ class ProfileFragment : Fragment() {
 
         binding.progressBarProfileFragment.visibility = View.VISIBLE // progressbar görünür olur
 
+
+
+
         return view
+    }
+
+    private fun setProgressBarState(){
+        if (progressBarCounting == 3) binding.progressBarProfileFragment.visibility = View.GONE
+        Log.e("progressBarCounting", progressBarCounting.toString())
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -154,6 +163,8 @@ class ProfileFragment : Fragment() {
                     }
                 }
                 postList.sortByDescending { it.values.firstOrNull()?.shareDate }
+                progressBarCounting++
+                setProgressBarState()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -232,6 +243,8 @@ class ProfileFragment : Fragment() {
                 }
 
                 binding.recyclerViewInterests.adapter = adapterInterests
+                progressBarCounting++
+                setProgressBarState()
 
             }
 
@@ -405,7 +418,8 @@ class ProfileFragment : Fragment() {
                     }
                 }
                 Log.e("profile fragment", " veriler geliyor size: " + userInformationList.size.toString() )
-
+                progressBarCounting++
+                setProgressBarState()
             }
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
